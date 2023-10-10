@@ -1,0 +1,29 @@
+.imagenCabecera {
+    float: right;
+    padding-right: 150px;
+    width: 150px;
+}
+
+.cabecera {
+    text-align: center;
+    font-size: x-large;
+    width: 15 px;
+    font-family: tahoma, Geneva, sans-serif;
+    margin-bottom: 100px;
+    color: teal
+}
+
+.contenido form{
+
+    width: 300px;
+    margin: 0 auto;
+}
+
+.pie{
+
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    font-size: 0.7em;
+    margin-bottom: 15px;
+}

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::resource('productos', ProductosControllere::class)
+    ->missing(function (Request $request) {
+        return Redirect::route('productos.store');
+    });
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +32,3 @@ Route::get('/actualizar',[ ProductosControllere::class,'update']);
 
 Route::get('/borrar',[ ProductosControllere::class,'destroy']);
 */
-
-Route::resource('productos', ProductosControllere::class);
-
