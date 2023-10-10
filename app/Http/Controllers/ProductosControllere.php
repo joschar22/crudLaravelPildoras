@@ -40,16 +40,23 @@ class ProductosControllere extends Controller
     public function show(string $id)
     {
         //
+        $producto=Producto::findOrFail($id);
+        return view('productos.show',compact('producto'));
     }
     public function edit(string $id)
     {
         //
+        $producto=Producto::findOrFail($id);
+        return view('productos.edit',compact('producto'));
     }
 
     public function update(Request $request, string $id)
     {
         //
-        return view('productos.update');
+        $producto=Producto::findOrFail($id);
+        $producto->update($request->all());
+        return redirect("/productos");
+
 
     }
 
