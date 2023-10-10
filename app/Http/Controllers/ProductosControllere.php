@@ -13,8 +13,8 @@ class ProductosControllere extends Controller
     public function index()
     {
         //
-
-        echo 'you are in index';
+        $productos=Producto::all();
+        return view('productos.index', compact('productos'));
     }
 
     public function create()
