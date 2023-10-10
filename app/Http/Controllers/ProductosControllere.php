@@ -64,7 +64,9 @@ class ProductosControllere extends Controller
     {
         //
 
-        return view('productos.delete');
+       $producto=Producto::findOrFail($id); // obtiene el id del producto que desamos
+        $producto->delete();
+        return redirect("/productos");
 
     }
 }

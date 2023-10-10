@@ -36,10 +36,10 @@ Insertar registros
             <input type="submit" name='enviar' value="Enviar">
         </td>
 
-        <td align='center'><input type="submit" name='limpiar' value="Limpiar"></td>
+        <td align='center'><input type="reset" name='limpiar' value="Limpiar"></td>
     </tr>
 </table>
-</form>
+
 @endsection
 @section('pie')
 @endsection

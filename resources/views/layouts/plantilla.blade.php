@@ -19,7 +19,7 @@
         
         <div class="pie">
             @yield('pie')
-            Jose chaqquere rea todo los derechos reservados
+            Jose chaqquere rea todo los derechos reservados rescatado de pildorasinformaticas.es
         </div>
 
 </body>
