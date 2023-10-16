@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProductoRequest;
 
 class ProductosControllere extends Controller
 {
@@ -13,7 +14,7 @@ class ProductosControllere extends Controller
     public function index()
     {
         //
-        $productos=Producto::all();
+        $productos = Producto::all();
         return view('productos.index', compact('productos'));
     }
 
@@ -23,16 +24,25 @@ class ProductosControllere extends Controller
         return view('productos.create');
     }
 
-   
-    public function store(Request $request)
+
+    public function store(CreateProductoRequest $request)
     {
+        /*
+        $this->validate($request,[
+                'NombreArticulo' => 'required',
+                'Seccion' => 'required',
+                'PaisOrigen' => 'required',
+                'Precio' => 'required']);
+
+        */
+
         // return view('productos.create');
-        $producto=new Producto;
-        $producto->NombreArticulo=$request->NombreArticulo;
-        $producto->Seccion=$request->Seccion;
-        $producto->Precio=$request->Precio;
-        $producto->Fecha=$request->Fecha;
-        $producto->PaisOrigen=$request->PaisOrigen;
+        $producto = new Producto;
+        $producto->NombreArticulo = $request->NombreArticulo;
+        $producto->Seccion = $request->Seccion;
+        $producto->Precio = $request->Precio;
+        $producto->Fecha = $request->Fecha;
+        $producto->PaisOrigen = $request->PaisOrigen;
         $producto->save();
 
     }
@@ -40,20 +50,20 @@ class ProductosControllere extends Controller
     public function show(string $id)
     {
         //
-        $producto=Producto::findOrFail($id);
-        return view('productos.show',compact('producto'));
+        $producto = Producto::findOrFail($id);
+        return view('productos.show', compact('producto'));
     }
     public function edit(string $id)
     {
         //
-        $producto=Producto::findOrFail($id);
-        return view('productos.edit',compact('producto'));
+        $producto = Producto::findOrFail($id);
+        return view('productos.edit', compact('producto'));
     }
 
     public function update(Request $request, string $id)
     {
         //
-        $producto=Producto::findOrFail($id);
+        $producto = Producto::findOrFail($id);
         $producto->update($request->all());
         return redirect("/productos");
 
@@ -64,7 +74,7 @@ class ProductosControllere extends Controller
     {
         //
 
-       $producto=Producto::findOrFail($id); // obtiene el id del producto que desamos
+        $producto = Producto::findOrFail($id); // obtiene el id del producto que desamos
         $producto->delete();
         return redirect("/productos");
 

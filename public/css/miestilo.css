@@ -40,5 +40,8 @@ body {
     margin-bottom: 15px;
     text-align: center;
     color: rgb(42, 253, 0);
+    font-style: italic;
 }
-
+.mensajeError{
+    color: red;
+}
